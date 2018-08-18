@@ -1,0 +1,1 @@
+Templates for lab environment creation at RHTE
