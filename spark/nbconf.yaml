@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: nbconf
+data:
+    sparkimage: radanalyticsio/openshift-spark:2.3-latest
+    spark-defaults.conf: |-
+spark.driver.host: notebook
