@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1alpha1
 kind: KafkaConnect
 metadata:
-  name: my-connect-cluster
+  name: uber-connect-cluster
 spec:
   replicas: 1
   readinessProbe:

@@ -1,50 +1,50 @@
 apiVersion: kafka.strimzi.io/v1alpha1
 kind: KafkaUser
 metadata:
-  name: my-user
+  name: uber-user
   labels:
-    strimzi.io/cluster: my-cluster
+    strimzi.io/cluster: uber-cluster
 spec:
   authentication:
     type: tls
   authorization:
     type: simple
     acls:
-      # Example consumer Acls for topic my-topic suing consumer group my-group
+      # Example consumer Acls for topic KafkaSmokeTestTopic using consumer group uber-group
       - resource:
           type: topic
-          name: my-topic
+          name: KafkaSmokeTestTopic
           patternType: literal
         operation: Read
         host: "*"
       - resource:
           type: topic
-          name: my-topic
+          name: KafkaSmokeTestTopic
           patternType: literal
         operation: Describe
         host: "*"
       - resource:
           type: group
-          name: my-group
+          name: uber-group
           patternType: literal
         operation: Read
         host: "*"
-      # Example Producer Acls for topic my-topic
+      # Example Producer Acls for topic KafkaSmokeTestTopic
       - resource:
           type: topic
-          name: my-topic
+          name: KafkaSmokeTestTopic
           patternType: literal
         operation: Write
         host: "*"
       - resource:
           type: topic
-          name: my-topic
+          name: KafkaSmokeTestTopic
           patternType: literal
         operation: Create
         host: "*"
       - resource:
           type: topic
-          name: my-topic
+          name: KafkaSmokeTestTopic
           patternType: literal
         operation: Describe
         host: "*"
